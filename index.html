@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prim's Algorithm MST Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Prim's Algorithm to form Minimum Spanning Tree</h1>
+
+        <div class="controls">
+            <select id="nodeCount">
+                <option value="3">3 Nodes</option>
+                <option value="4">4 Nodes</option>
+                <option value="5" selected>5 Nodes</option>
+                <option value="6">6 Nodes</option>
+                <option value="7">7 Nodes</option>
+                <option value="8">8 Nodes</option>
+            </select>
+            <button id="generateGraph">Generate Graph</button>
+            <button id="startAlgorithm" disabled>Start Algorithm</button>
+            <button id="nextStep" disabled>Next Step</button>
+            <button id="reset" disabled>Reset</button>
+            <button id="showMatrix">Show/Hide Matrix</button>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item"><div class="legend-color" style="background-color:#3498db;"></div><span>Node</span></div>
+            <div class="legend-item"><div class="legend-color" style="background-color:#2ecc71;"></div><span>Included in MST</span></div>
+            <div class="legend-item"><div class="legend-color" style="background-color:#bdc3c7;"></div><span>Graph Edge</span></div>
+            <div class="legend-item"><div class="legend-color" style="background-color:#2ecc71;"></div><span>MST Edge</span></div>
+            <div class="legend-item"><div class="legend-color" style="background-color:#f39c12;"></div><span>Considered Edge</span></div>
+        </div>
+
+        <div class="simulation-area">
+            <canvas id="graphCanvas" width="600" height="400"></canvas>
+            <div class="step-info" id="stepInfo">
+                <h3>Algorithm Status</h3>
+                <p>Please generate a graph to begin.</p>
+            </div>
+        </div>
+
+        <div class="adjacency-matrix" id="adjacencyMatrix" style="display:none;">
+            <h3>Adjacency Matrix</h3>
+            <p>Edit edge weights (0 or blank means no edge):</p>
+            <table id="weightTable">
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
